@@ -37,3 +37,8 @@ func Cancelable() (C, Cancel) {
 func WithCancel(c C) (C, Cancel) {
 	return context.WithCancel(c)
 }
+
+// WithTTL wraps an existing Context that will expire after the given duration.
+func WithTTL(c C, duration time.Duration) (C, Cancel) {
+	return context.WithTimeout(c, duration)
+}
