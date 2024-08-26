@@ -22,4 +22,5 @@ vet:
 .PHONY: lint
 lint: vet
 	@echo "==> Lint ..."
-	@golangci-lint run
+	@golangci-lint run \
+		--config .github/workflows/scripts/golangci.yaml
