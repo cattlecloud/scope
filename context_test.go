@@ -8,6 +8,8 @@ import (
 )
 
 func Test_New(t *testing.T) {
+	t.Parallel()
+
 	if c := New(); c == nil {
 		t.Fail()
 	}

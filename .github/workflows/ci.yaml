@@ -1,5 +1,12 @@
 name: Run CI Tests
-on: [pull_request]
+on:
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  push:
+    branches:
+      - 'main'
 jobs:
   run-copywrite:
     timeout-minutes: 5
@@ -18,7 +25,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: golangci/golangci-lint-action@v6
         with:
-          version: v1.59.1
+          version: v1.60.3
+          args: --config .github/workflows/scripts/golangci.yaml
   run-tests:
     runs-on: ubuntu-24.04
     steps:
