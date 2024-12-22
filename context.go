@@ -1,9 +1,9 @@
-// Copyright (c) NOXIDE.LOL
+// Copyright (c) CattleCloud LLC
 // SPDX-License-Identifier: BSD-3-Clause
 
-// Package xtc implements a simplified and more convenient API for creating
+// Package scope implements a simplified and more convenient API for creating
 // context.Context values with often used functionality like timeouts.
-package xtc
+package scope
 
 import (
 	"context"
