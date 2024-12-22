@@ -1,3 +1,3 @@
-module noxide.lol/go/xtc
+module cattlecloud.net/go/scope
 
-go 1.21
+go 1.23
