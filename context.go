@@ -42,3 +42,13 @@ func WithCancel(c C) (C, Cancel) {
 func WithTTL(c C, duration time.Duration) (C, Cancel) {
 	return context.WithTimeout(c, duration)
 }
+
+// WithValue wraps an existing Context with value set for key.
+func WithValue[K, V any](c C, key K, value V) C {
+	return context.WithValue(c, key, value)
+}
+
+// Value retrieves the value associated with the given key.
+func Value[K, V any](c C, key K) V {
+	return c.Value(key).(V)
+}
