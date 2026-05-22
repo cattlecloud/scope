@@ -15,15 +15,8 @@ tidy:
 
 # run tests across source tree
 [group('build')]
-test:
+tests:
     go test -v -race -count=1 ./...
-
-# ensure copywrite headers present on source files
-[group('lint')]
-copywrite:
-    copywrite \
-        --config {{scripts}}/copywrite.hcl headers \
-        --spdx "BSD-3-Clause"
 
 # apply go vet command on source tree
 [group('lint')]
