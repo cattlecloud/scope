@@ -27,6 +27,12 @@ func TTL(duration time.Duration) (C, Cancel) {
 	return context.WithTimeout(New(), duration)
 }
 
+// Deadline will create a fresh context not part of any preceding chain of
+// values, and will expire at the given expiration time.
+func Deadline(expiration time.Time) (C, Cancel) {
+	return context.WithDeadline(New(), expiration)
+}
+
 // Cancelable will create a fresh context not part of any preceding chain of
 // values, and includes a Cancel function.
 func Cancelable() (C, Cancel) {
